@@ -52,8 +52,8 @@ setClass(
 
 #' Create the MFAI object with main data matrix and auxiliary information.
 #'
-#' @slot Y numeric. The main data matrix.
-#' @slot X ANY. The auxiliary information data frame.
+#' @param Y numeric. The main data matrix.
+#' @param X data.frame. The auxiliary information.
 #' @param project Name of the project (for record keeping).
 #'
 #' @return Returns MFAI object, with main data matrix and auxiliary information.

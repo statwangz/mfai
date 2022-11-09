@@ -7,6 +7,10 @@
 CreateMFAI(Y, X, project = "MFAI")
 }
 \arguments{
+\item{Y}{numeric. The main data matrix.}
+
+\item{X}{data.frame. The auxiliary information.}
+
 \item{project}{Name of the project (for record keeping).}
 }
 \value{
@@ -15,11 +19,3 @@ Returns MFAI object, with main data matrix and auxiliary information.
 \description{
 Create the MFAI object with main data matrix and auxiliary information.
 }
-\section{Slots}{
-
-\describe{
-\item{\code{Y}}{numeric. The main data matrix.}
-
-\item{\code{X}}{ANY. The auxiliary information data frame.}
-}}
-
