@@ -17,6 +17,8 @@ Each MFAI object has a number of slots which store information. Key slots to acc
 
 \item{\code{X}}{ANY. The auxiliary information data frame.}
 
+\item{\code{project}}{character. Name of the project (for record keeping).}
+
 \item{\code{Z}}{numeric. Estimated low-rank matrix, corresponding to posterior mean mu of Z in the MFAI model.}
 
 \item{\code{W}}{numeric. Estimated low-rank matrix, corresponding to posterior mean nu of W in the MFAI model.}
