@@ -2,6 +2,7 @@
 #'
 #' @slot Y numeric. The main data matrix.
 #' @slot X ANY. The auxiliary information data frame.
+#' @slot project character. Name of the project (for record keeping).
 #' @slot Z numeric. Estimated low-rank matrix, corresponding to posterior mean mu of Z in the MFAI model.
 #' @slot W numeric. Estimated low-rank matrix, corresponding to posterior mean nu of W in the MFAI model.
 #' @slot tau numeric. Precision parameter for each pair of factors.
@@ -22,6 +23,7 @@ setClass(
   slots = c(
     Y = "numeric",
     X = "ANY",
+    project = "character",
     Z = "numeric",
     W = "numeric",
     tau = "numeric",
@@ -36,6 +38,7 @@ setClass(
   prototype = list(
     Y = NA_real_,
     X = NULL,
+    project = "MFAI",
     Z = NA_real_,
     W = NA_real_,
     tau = NA_real_,
@@ -46,3 +49,28 @@ setClass(
     boostingParameter = NULL
   )
 )
+
+#' Create the MFAI object with main data matrix and auxiliary information.
+#'
+#' @slot Y numeric. The main data matrix.
+#' @slot X ANY. The auxiliary information data frame.
+#' @param project Name of the project (for record keeping).
+#'
+#' @return Returns MFAI object, with main data matrix and auxiliary information.
+#' @export
+CreateMFAI <- function(Y, X, project = "MFAI") {
+  # Check dimension
+  if (nrow(Y) != nrow(X)) {
+    stop("The number of samples in Y and X should be consistent.")
+  } # End
+
+  # Inheriting
+  object <- new(
+    Class = "MFAI",
+    Y = Y,
+    X = X,
+    project = project
+  )
+
+  return(object)
+}
