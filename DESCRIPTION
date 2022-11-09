@@ -1,5 +1,5 @@
 Package: mfai
-Title: What the Package Does (One Line, Title Case)
+Title: MFAI: A Bayesian Matrix Factorization Approach to Adaptively Incorporating Auxiliary Information.
 Version: 0.0.0.9000
 Authors@R: 
     person("Zhiwei", "Wang", , "zhiwei.wang@connect.ust.hk", role = c("aut", "cre"),
